@@ -18,12 +18,13 @@ This is not an official company website, and the company does not sponsor or end
 ## Project structure
 
 ```
-index.html            Single page: header, hero, manifesto, membership form, privacy, footer
-styles.css            Mobile-first styles (no frameworks, no web fonts)
+index.html            Single page: header, hero, manifesto, the pitch, membership form + privacy, footer
+styles.css            Mobile-first styles built on CSS design tokens (no frameworks)
 app.js                Form validation, submission, and UI states
 config.js             The ONLY file to edit: backend URL, demo mode, contact, domains
 assets/mck-logo.svg   MCK emblem (original artwork)
 assets/favicon.svg
+assets/fonts/         Self-hosted Inter, Barlow Condensed and Noto Sans Tamil (OFL; see LICENSE.md)
 backend/Code.gs       Google Apps Script backend (paste into the Sheet's script editor)
 backend/appsscript.json  Optional Apps Script manifest (for clasp users)
 dev/mock-backend.mjs  Local test backend that runs the real Code.gs in Node
@@ -46,7 +47,7 @@ Browser (GitHub Pages)  ──POST JSON──▶  Apps Script web app  ──app
 - If someone registers an email that is already on the list, they get a friendly "already a member" reply and no duplicate row is added. Emails are matched without regard to case.
 - **Abuse protection:** a hidden honeypot field, a minimum fill time, a global rate limit (20 per minute by default), a script lock against concurrent writes, a size limit on requests, and escaping of values that start with `= + - @` so a spreadsheet can't run them as formulas.
 - **CORS:** the request is sent as `Content-Type: text/plain`. That makes it a "simple" request, so the browser skips the preflight check, which Apps Script can't answer. Apps Script then redirects to `script.googleusercontent.com`, and that response carries the CORS header. The code never uses `no-cors` mode, because it has to read the reply to confirm the registration was saved.
-- Nothing the visitor types is stored in `localStorage` or `sessionStorage`. The site has no analytics, trackers or external fonts.
+- Nothing the visitor types is stored in `localStorage` or `sessionStorage`. The site has no analytics or trackers, and fonts are self-hosted, so the only third-party request is the registration POST.
 
 ### Modes (set in `config.js`)
 

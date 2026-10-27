@@ -33,7 +33,11 @@ let crashNext = false;
 const sheet = {
   getName: () => 'Registrations',
   getLastRow: () => rows.length,
-  appendRow: (row) => { rows.push(row); console.log('  appended:', JSON.stringify(row)); },
+  appendRow: (row) => {
+    if (crashNext && rows.length > 0) { crashNext = false; throw new Error('Simulated spreadsheet failure'); }
+    rows.push(row);
+    console.log('  appended:', JSON.stringify(row));
+  },
   getRange: (row, col, numRows) => ({
     setFontWeight() { return this; },
     createTextFinder: (text) => {
@@ -41,7 +45,6 @@ const sheet = {
         matchCase: () => finder,
         matchEntireCell: () => finder,
         findNext: () => {
-          if (crashNext) { crashNext = false; throw new Error('Simulated spreadsheet failure'); }
           const hit = rows.slice(row - 1, row - 1 + numRows)
             .some((r) => String(r[col - 1]).replace(/^'/, '').toLowerCase() === text.toLowerCase());
           return hit ? {} : null;

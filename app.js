@@ -71,8 +71,11 @@
 
   function init() {
     renderContact();
+    initNav();
 
-    if (mode === 'demo') {
+    if (mode === 'live') {
+      document.querySelectorAll('[data-live-only]').forEach((el) => { el.hidden = false; });
+    } else if (mode === 'demo') {
       document.querySelectorAll('[data-demo-only]').forEach((el) => { el.hidden = false; });
       console.warn('[MCK] Demo mode: registrations are simulated and NOT saved.');
     } else if (mode === 'unconfigured') {
@@ -96,6 +99,34 @@
     });
     els.consent.addEventListener('change', () => {
       if (els.consent.checked) showFieldError(els.consent, '');
+    });
+  }
+
+  /** Mobile menu: toggle button, closes on link click, Escape or outside click. */
+  function initNav() {
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (!header || !toggle || !nav) return;
+
+    const setOpen = (open, returnFocus) => {
+      header.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      if (!open && returnFocus) toggle.focus();
+    };
+
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    nav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && header.classList.contains('nav-open')) setOpen(false, true);
+    });
+    document.addEventListener('click', (event) => {
+      if (header.classList.contains('nav-open') && !header.contains(event.target)) setOpen(false);
+    });
+    window.matchMedia('(min-width: 900px)').addEventListener('change', (event) => {
+      if (event.matches) setOpen(false);
     });
   }
 

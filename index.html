@@ -4,11 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCK — Makkal Comitee Katchi | Join the Party</title>
-  <meta name="description" content="Makkal Comitee Katchi (MCK) — a satirical, employee-created party for the Team Games Committee election. Free, voluntary membership in one step.">
-  <meta name="theme-color" content="#14104a">
+  <meta name="description" content="Makkal Comitee Katchi (MCK) — a fun, employee-created party for the Team Games Committee election. Keep the match winners on the field. Free, voluntary membership in one step.">
+  <meta name="theme-color" content="#111827">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
 </head>
@@ -20,73 +23,169 @@
   </div>
 
   <header class="site-header">
-    <div class="wrap header-inner">
+    <div class="wrap header-bar">
       <a class="brand" href="#top" aria-label="MCK — Makkal Comitee Katchi, back to top">
-        <img src="assets/mck-logo.svg" alt="" width="48" height="48">
+        <img src="assets/mck-logo.svg" alt="" width="40" height="40">
         <span class="brand-text">
           <span class="brand-ta" lang="ta">மக்கள் கமிட்டி கட்சி</span>
-          <span class="brand-en">MAKKAL COMITEE KATCHI</span>
+          <span class="brand-en"><span class="brand-full">Makkal Comitee Katchi</span><span class="brand-short" aria-hidden="true">MCK</span></span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Page sections">
-        <a href="#manifesto">Manifesto</a>
-        <a href="#join" class="nav-join">Join</a>
-        <a href="#privacy">Privacy</a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#manifesto">Manifesto</a></li>
+          <li><a href="#pitch">The Pitch</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+        </ul>
       </nav>
+
+      <a class="btn btn-red btn-sm header-cta" href="#join">Join MCK</a>
+
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+          <path class="i-open" d="M4 7h16M4 12h16M4 17h16"/>
+          <path class="i-close" d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
     </div>
     <div class="flag-stripe" aria-hidden="true"></div>
   </header>
 
   <main id="top">
+    <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-inner">
-        <img class="hero-emblem" src="assets/mck-logo.svg" alt="MCK emblem: a trophy holding a game controller" width="148" height="148">
-        <p class="eyebrow">Backing Raajeshwar for the Team Games Committee</p>
-        <h1 id="hero-title">The people have spoken. <span>The party has arrived.</span></h1>
-        <p class="hero-copy">An ordinary office election deserves an extraordinary party. Join MCK and become part of the most unnecessarily organized movement in Team Games history.</p>
-        <a class="btn btn-primary" href="#join">Join the party</a>
-        <p class="slogan" lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</p>
-        <p class="slogan-en">Our Candidate. Our Committee. Our Party.</p>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="label label-on-dark">
+            <span class="label-dot" aria-hidden="true"></span>
+            Team Games Committee election · Backing Raajeshwar
+          </p>
+          <h1 id="hero-title">Keep the match winners <span>on the field.</span></h1>
+          <p class="hero-lead">
+            Let Raajeshwar organize the games. MCK wants better-run games, more colleagues joining in,
+            and stronger team bonding — so everyone else can focus on playing, and winning.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-red" href="#join">Join MCK</a>
+            <a class="btn btn-outline-light" href="#manifesto">Read Our Manifesto</a>
+          </div>
+          <p class="hero-aside">The people have spoken. The party has arrived.</p>
+        </div>
+
+        <figure class="poster">
+          <img class="poster-emblem" src="assets/mck-logo.svg" alt="MCK emblem: a gold trophy holding a game controller" width="220" height="220">
+          <figcaption class="poster-text">
+            <span class="poster-name" lang="ta">மக்கள் கமிட்டி கட்சி</span>
+            <span class="poster-slogan" lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</span>
+            <span class="poster-en">Our Candidate. Our Committee. Our Party.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="manifesto" class="manifesto" aria-labelledby="manifesto-title">
+    <!-- ============ MANIFESTO ============ -->
+    <section id="manifesto" class="section manifesto" aria-labelledby="manifesto-title">
       <div class="wrap">
-        <p class="kicker">Official campaign promises*</p>
-        <h2 id="manifesto-title">The MCK Manifesto</h2>
-        <p class="section-lead">Keep the match winners on the field. Let us take care of the games!</p>
+        <header class="section-head">
+          <p class="label">Official campaign promises*</p>
+          <h2 id="manifesto-title">The MCK Manifesto</h2>
+          <p class="section-lead">Keep the match winners on the field. Let us take care of the games!</p>
+        </header>
+
         <ol class="promises">
-          <li>
+          <li class="promise">
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.5 8h11a4 4 0 0 1 3.9 4.8l-.9 4.1a2.3 2.3 0 0 1-4 1L15 16H9l-1.5 1.9a2.3 2.3 0 0 1-4-1l-.9-4.1A4 4 0 0 1 6.5 8z"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="15.5" cy="11.5" r=".6"/><circle cx="17.5" cy="13.5" r=".6"/></svg>
+            </span>
             <span class="promise-no" aria-hidden="true">01</span>
             <h3>More games, less boredom.</h3>
             <p>Boredom will be politely but firmly escorted out of the building.</p>
           </li>
-          <li>
+          <li class="promise">
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.8 14.2A4.8 4.8 0 0 1 21 19"/></svg>
+            </span>
             <span class="promise-no" aria-hidden="true">02</span>
             <h3>More team bonding, fewer excuses.</h3>
             <p>“I have a call” remains valid. We will simply schedule around it.</p>
           </li>
-          <li>
+          <li class="promise">
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5.5a3 3 0 0 0 3 4.5M16 6h2.5a3 3 0 0 1-3 4.5"/><path d="M12 13v4M8.5 20h7M10 17h4"/></svg>
+            </span>
             <span class="promise-no" aria-hidden="true">03</span>
             <h3>Match winners stay on the field.</h3>
             <p>Our star players play. The committee handles the clipboards.</p>
           </li>
-          <li>
+          <li class="promise">
+            <span class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.5 18h5M10.5 21h3"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/><path d="M9.8 9.6l1.6 1.6 2.9-3"/></svg>
+            </span>
             <span class="promise-no" aria-hidden="true">04</span>
             <h3>Great ideas deserve great execution.</h3>
             <p>Every suggestion gets a fair hearing — and an actual plan.</p>
           </li>
         </ol>
-        <p class="fineprint">*Playful campaign promises. Legally non-binding. Powered entirely by enthusiasm.</p>
+        <p class="fineprint">*Playful campaign promises. Legally non-binding. Powered entirely by enthusiasm. Not company-approved initiatives.</p>
       </div>
     </section>
 
-    <section id="join" class="join" aria-labelledby="join-title">
-      <div class="wrap join-inner">
+    <!-- ============ THE PITCH ============ -->
+    <section id="pitch" class="section pitch" aria-labelledby="pitch-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="label label-on-dark">The candidate’s pitch</p>
+          <h2 id="pitch-title">You play. <span>Raajeshwar organizes.</span></h2>
+          <p class="section-lead">
+            An ordinary office election deserves an extraordinary party. Join MCK and become part of the
+            most unnecessarily organized movement in Team Games history.
+          </p>
+        </header>
+
+        <div class="split" role="list">
+          <div class="split-side split-field" role="listitem">
+            <p class="split-tag">On the field</p>
+            <h3>The match winners</h3>
+            <p>Keep playing, keep competing, keep winning. Your job is the scoreboard — not the spreadsheet.</p>
+          </div>
+          <div class="split-join" aria-hidden="true">+</div>
+          <div class="split-side split-office" role="listitem">
+            <p class="split-tag">Off the field</p>
+            <h3>Raajeshwar</h3>
+            <p>Fixtures, teams, timings and the clipboard work — so the games actually happen, and more people join in.</p>
+          </div>
+        </div>
+
+        <p class="pitch-quote">
+          <span lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</span>
+          <span class="pitch-quote-en">Match winners stay on the field. Let Raajeshwar organize the games.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ MEMBERSHIP ============ -->
+    <section id="join" class="section join" aria-labelledby="join-title">
+      <div class="wrap join-grid">
+        <div class="join-intro">
+          <p class="label">Membership</p>
+          <h2 id="join-title">The party has arrived. <span>Join MCK.</span></h2>
+          <p class="section-lead">One form. One tap. Zero speeches.</p>
+          <p class="reassure">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
+            <span>Free membership. No password. No spam. Just voluntary participation in the MCK joke.</span>
+          </p>
+        </div>
+
         <div class="join-card">
-          <h2 id="join-title">Join MCK</h2>
-          <p class="join-sub">One form. One tap. Zero speeches.</p>
-          <p class="reassure">Free membership. No password. No spam. Just voluntary participation in the MCK joke.</p>
+          <div class="card-head">
+            <h3 class="card-title">Membership form</h3>
+            <p class="mode-status mode-live" data-live-only hidden>
+              <span class="label-dot" aria-hidden="true"></span> Registration open
+            </p>
+            <p class="mode-status mode-demo" data-demo-only hidden>Demo — not saved</p>
+          </div>
 
           <div class="notice notice-demo" data-demo-only hidden role="note">
             <strong>Demo mode is on.</strong> This form only simulates registration — nothing you enter is saved anywhere.
@@ -140,7 +239,7 @@
                 <p class="field-error" id="consent-error" aria-live="polite"></p>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+              <button type="submit" class="btn btn-red btn-submit" id="submit-btn">
                 <span class="btn-label">JOIN MCK — ENROLL NOW</span>
                 <span class="btn-busy" aria-hidden="true">Registering…</span>
               </button>
@@ -151,7 +250,7 @@
           </form>
 
           <div class="success" id="success" hidden>
-            <div class="success-burst" aria-hidden="true"></div>
+            <img src="assets/mck-logo.svg" alt="" width="64" height="64">
             <h3 id="success-title" tabindex="-1">You’re in!</h3>
             <p id="success-message"></p>
             <p class="success-demo" data-demo-only hidden><strong>DEMO MODE:</strong> nothing was actually saved.</p>
@@ -159,30 +258,44 @@
         </div>
 
         <aside id="privacy" class="privacy" aria-labelledby="privacy-title">
-          <h2 id="privacy-title">Your details, handled seriously</h2>
-          <p>The party is a joke. Your data is not.</p>
-          <ul>
-            <li><strong>What we collect:</strong> your name, work email and (optionally) team — nothing else. No passwords, phone numbers or employee IDs.</li>
-            <li><strong>Why:</strong> to keep the MCK member list and to share fun team-games campaign updates.</li>
-            <li><strong>Where it lives:</strong> a private spreadsheet that only the organiser can open. The member list is never published on this site.</li>
-            <li><strong>What we don’t do:</strong> we don’t record or infer how anyone votes, and we don’t share member details with other nominees or third parties.</li>
-            <li><strong>Change your mind?</strong> Ask the organiser to correct or delete your registration: <span data-contact>contact details coming soon</span>.</li>
-          </ul>
+          <h3 id="privacy-title">Your details, handled seriously</h3>
+          <p class="privacy-tagline">The party is a joke. Your data is not.</p>
+          <dl>
+            <div><dt>What we collect</dt><dd>Your name, work email and (optionally) team — nothing else. No passwords, phone numbers or employee IDs.</dd></div>
+            <div><dt>Why</dt><dd>To keep the MCK member list and to share fun team-games campaign updates.</dd></div>
+            <div><dt>Where it lives</dt><dd>A private spreadsheet that only the organiser can open. The member list is never published on this site.</dd></div>
+            <div><dt>What we don’t do</dt><dd>We don’t record or infer how anyone votes, and we don’t share member details with other nominees or third parties.</dd></div>
+            <div><dt>Change your mind?</dt><dd>Ask the organiser to correct or delete your registration: <span data-contact>contact Raajeshwar directly</span>.</dd></div>
+          </dl>
         </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <img src="assets/mck-logo.svg" alt="" width="56" height="56">
-      <p class="footer-name"><span lang="ta">மக்கள் கமிட்டி கட்சி</span> · Makkal Comitee Katchi (MCK)</p>
-      <p class="footer-slogan"><span lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</span></p>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="assets/mck-logo.svg" alt="" width="48" height="48">
+        <div>
+          <p class="footer-name"><span lang="ta">மக்கள் கமிட்டி கட்சி</span> · Makkal Comitee Katchi (MCK)</p>
+          <p class="footer-slogan"><span lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</span> Our Candidate. Our Committee. Our Party.</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="#manifesto">Manifesto</a></li>
+          <li><a href="#pitch">The Pitch</a></li>
+          <li><a href="#join">Join MCK</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+        </ul>
+      </nav>
+      <p class="footer-contact">Questions or data requests: <span data-contact>contact Raajeshwar directly</span></p>
+    </div>
+    <div class="wrap">
       <p class="disclaimer">
-        MCK is a satirical, employee-created initiative for the Aximsoft Team Games Committee election.
-        This is <strong>not</strong> an official company website, and it is not sponsored or endorsed by the company.
+        MCK is a fun, employee-created initiative for the Aximsoft Team Games Committee election.
+        It is not an official company website or a company-sponsored initiative.
       </p>
-      <p class="footer-contact">Contact: <span data-contact>contact details coming soon</span></p>
     </div>
   </footer>
 </body>

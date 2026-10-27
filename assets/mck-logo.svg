@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="mck-logo-title">
+  <title id="mck-logo-title">MCK emblem: a trophy holding a game controller</title>
+  <!-- Outer gold rim with sunburst notches -->
+  <circle cx="100" cy="100" r="98" fill="#ffc20e"/>
+  <circle cx="100" cy="100" r="98" fill="none" stroke="#14104a" stroke-width="4" stroke-dasharray="6 9"/>
+  <!-- Magenta ring with stars -->
+  <circle cx="100" cy="100" r="88" fill="#d4006f"/>
+  <g fill="#fff">
+    <path id="star" d="M100 14l2.4 5 5.4.6-4 3.7 1.1 5.3-4.9-2.7-4.9 2.7 1.1-5.3-4-3.7 5.4-.6z"/>
+    <use href="#star" transform="rotate(45 100 100)"/>
+    <use href="#star" transform="rotate(90 100 100)"/>
+    <use href="#star" transform="rotate(135 100 100)"/>
+    <use href="#star" transform="rotate(225 100 100)"/>
+    <use href="#star" transform="rotate(270 100 100)"/>
+    <use href="#star" transform="rotate(315 100 100)"/>
+  </g>
+  <!-- Indigo core -->
+  <circle cx="100" cy="100" r="72" fill="#14104a"/>
+  <!-- Trophy -->
+  <g fill="#ffc20e">
+    <path d="M67 46h66v26c0 22-14.8 36-33 36s-33-14-33-36z"/>
+    <path d="M67 52H54c-1.5 18 6 28 18 31l1.5-6c-8-2.5-12.5-9-12-19H67zM133 52h13c1.5 18-6 28-18 31l-1.5-6c8-2.5 12.5-9 12-19H133z"/>
+    <rect x="93" y="107" width="14" height="13"/>
+    <rect x="77" y="119" width="46" height="9" rx="2"/>
+  </g>
+  <!-- Game controller on the cup -->
+  <rect x="76" y="58" width="48" height="26" rx="13" fill="#14104a"/>
+  <g fill="#fff">
+    <rect x="84" y="69" width="12" height="4" rx="1"/>
+    <rect x="88" y="65" width="4" height="12" rx="1"/>
+  </g>
+  <circle cx="109" cy="67.5" r="3" fill="#d4006f"/>
+  <circle cx="116" cy="73.5" r="3" fill="#fff"/>
+  <!-- Wordmark -->
+  <text x="100" y="160" text-anchor="middle" font-family="Impact, 'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="3" fill="#fff">MCK</text>
+</svg>

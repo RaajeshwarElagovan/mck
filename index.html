@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCK — Makkal Comitee Katchi | Join the Party</title>
+  <meta name="description" content="Makkal Comitee Katchi (MCK) — a satirical, employee-created party for the Team Games Committee election. Free, voluntary membership in one step.">
+  <meta name="theme-color" content="#14104a">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#join">Skip to membership form</a>
+
+  <div class="demo-banner" data-demo-only hidden role="note">
+    <strong>DEMO MODE</strong> — registrations are simulated and <strong>not saved</strong>.
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="MCK — Makkal Comitee Katchi, back to top">
+        <img src="assets/mck-logo.svg" alt="" width="48" height="48">
+        <span class="brand-text">
+          <span class="brand-ta" lang="ta">மக்கள் கமிட்டி கட்சி</span>
+          <span class="brand-en">MAKKAL COMITEE KATCHI</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Page sections">
+        <a href="#manifesto">Manifesto</a>
+        <a href="#join" class="nav-join">Join</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+    <div class="flag-stripe" aria-hidden="true"></div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <img class="hero-emblem" src="assets/mck-logo.svg" alt="MCK emblem: a trophy holding a game controller" width="148" height="148">
+        <p class="eyebrow">Backing Raajeshwar for the Team Games Committee</p>
+        <h1 id="hero-title">The people have spoken. <span>The party has arrived.</span></h1>
+        <p class="hero-copy">An ordinary office election deserves an extraordinary party. Join MCK and become part of the most unnecessarily organized movement in Team Games history.</p>
+        <a class="btn btn-primary" href="#join">Join the party</a>
+        <p class="slogan" lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</p>
+        <p class="slogan-en">Our Candidate. Our Committee. Our Party.</p>
+      </div>
+    </section>
+
+    <section id="manifesto" class="manifesto" aria-labelledby="manifesto-title">
+      <div class="wrap">
+        <p class="kicker">Official campaign promises*</p>
+        <h2 id="manifesto-title">The MCK Manifesto</h2>
+        <p class="section-lead">Keep the match winners on the field. Let us take care of the games!</p>
+        <ol class="promises">
+          <li>
+            <span class="promise-no" aria-hidden="true">01</span>
+            <h3>More games, less boredom.</h3>
+            <p>Boredom will be politely but firmly escorted out of the building.</p>
+          </li>
+          <li>
+            <span class="promise-no" aria-hidden="true">02</span>
+            <h3>More team bonding, fewer excuses.</h3>
+            <p>“I have a call” remains valid. We will simply schedule around it.</p>
+          </li>
+          <li>
+            <span class="promise-no" aria-hidden="true">03</span>
+            <h3>Match winners stay on the field.</h3>
+            <p>Our star players play. The committee handles the clipboards.</p>
+          </li>
+          <li>
+            <span class="promise-no" aria-hidden="true">04</span>
+            <h3>Great ideas deserve great execution.</h3>
+            <p>Every suggestion gets a fair hearing — and an actual plan.</p>
+          </li>
+        </ol>
+        <p class="fineprint">*Playful campaign promises. Legally non-binding. Powered entirely by enthusiasm.</p>
+      </div>
+    </section>
+
+    <section id="join" class="join" aria-labelledby="join-title">
+      <div class="wrap join-inner">
+        <div class="join-card">
+          <h2 id="join-title">Join MCK</h2>
+          <p class="join-sub">One form. One tap. Zero speeches.</p>
+          <p class="reassure">Free membership. No password. No spam. Just voluntary participation in the MCK joke.</p>
+
+          <div class="notice notice-demo" data-demo-only hidden role="note">
+            <strong>Demo mode is on.</strong> This form only simulates registration — nothing you enter is saved anywhere.
+          </div>
+
+          <div class="notice notice-config" id="config-notice" hidden role="note">
+            <strong>Registration isn’t open yet.</strong> The party office hasn’t connected its registration desk.
+            Organisers: set <code>endpoint</code> in <code>config.js</code> to your Google Apps Script web app URL
+            (see the README).
+          </div>
+
+          <form id="join-form" class="join-form" novalidate>
+            <fieldset id="join-fieldset">
+              <legend class="visually-hidden">Membership registration</legend>
+
+              <!-- Honeypot: humans never see or fill this. -->
+              <div class="hp" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="field">
+                <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" required maxlength="80"
+                       autocomplete="name" autocapitalize="words" enterkeyhint="next"
+                       aria-describedby="name-error">
+                <p class="field-error" id="name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="email">Work email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required maxlength="254"
+                       inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"
+                       enterkeyhint="next" aria-describedby="email-hint email-error">
+                <p class="field-hint" id="email-hint">So we can identify you and send the occasional game-day update.</p>
+                <p class="field-error" id="email-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="team">Team or department <span class="optional">(optional)</span></label>
+                <input type="text" id="team" name="team" maxlength="80" autocomplete="off" enterkeyhint="done">
+              </div>
+
+              <div class="field field-check">
+                <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error">
+                <label for="consent">
+                  I voluntarily wish to join Makkal Comitee Katchi, a fictional fun club, and agree that my
+                  name, email and team are stored privately for MCK club purposes.
+                  <a href="#privacy">How we use it</a>.
+                </label>
+                <p class="field-error" id="consent-error" aria-live="polite"></p>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span class="btn-label">JOIN MCK — ENROLL NOW</span>
+                <span class="btn-busy" aria-hidden="true">Registering…</span>
+              </button>
+              <p class="cta-sub" aria-hidden="true">a.k.a. the <strong>COUNT ME IN!</strong> button</p>
+            </fieldset>
+
+            <div class="form-status" id="form-status" role="alert" hidden></div>
+          </form>
+
+          <div class="success" id="success" hidden>
+            <div class="success-burst" aria-hidden="true"></div>
+            <h3 id="success-title" tabindex="-1">You’re in!</h3>
+            <p id="success-message"></p>
+            <p class="success-demo" data-demo-only hidden><strong>DEMO MODE:</strong> nothing was actually saved.</p>
+          </div>
+        </div>
+
+        <aside id="privacy" class="privacy" aria-labelledby="privacy-title">
+          <h2 id="privacy-title">Your details, handled seriously</h2>
+          <p>The party is a joke. Your data is not.</p>
+          <ul>
+            <li><strong>What we collect:</strong> your name, work email and (optionally) team — nothing else. No passwords, phone numbers or employee IDs.</li>
+            <li><strong>Why:</strong> to keep the MCK member list and to share fun team-games campaign updates.</li>
+            <li><strong>Where it lives:</strong> a private spreadsheet that only the organiser can open. The member list is never published on this site.</li>
+            <li><strong>What we don’t do:</strong> we don’t record or infer how anyone votes, and we don’t share member details with other nominees or third parties.</li>
+            <li><strong>Change your mind?</strong> Ask the organiser to correct or delete your registration: <span data-contact>contact details coming soon</span>.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <img src="assets/mck-logo.svg" alt="" width="56" height="56">
+      <p class="footer-name"><span lang="ta">மக்கள் கமிட்டி கட்சி</span> · Makkal Comitee Katchi (MCK)</p>
+      <p class="footer-slogan"><span lang="ta">“நம்ம ஆளு… நம்ம கமிட்டி… நம்ம கச்சி!”</span></p>
+      <p class="disclaimer">
+        MCK is a satirical, employee-created initiative for the Aximsoft Team Games Committee election.
+        This is <strong>not</strong> an official company website, and it is not sponsored or endorsed by the company.
+      </p>
+      <p class="footer-contact">Contact: <span data-contact>contact details coming soon</span></p>
+    </div>
+  </footer>
+</body>
+</html>

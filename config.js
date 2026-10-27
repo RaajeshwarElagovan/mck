@@ -8,7 +8,7 @@ window.MCK_CONFIG = Object.freeze({
   // Google Apps Script web app URL, ending in /exec.
   // Leave empty and registration stays disabled with a "not configured" notice.
   // Example: 'https://script.google.com/macros/s/AKfy...xyz/exec'
-  endpoint: '',
+  endpoint: 'https://script.google.com/macros/s/AKfycbzT98885ue790pH9y954WW0jUeBut5hISe07p28bZLvGYd8HX3xTO70q93qqjPOAtGD/exec',
 
   // true = simulate the backend. Nothing is saved, and the page shows a
   // DEMO MODE banner. Use for local design work only; set false before launch.
